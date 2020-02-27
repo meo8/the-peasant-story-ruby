@@ -13,8 +13,14 @@ class Story
     puts @story
   end
 
-  def end_story
-    puts @end_story
+  def end_story(answer)
+    endings = {
+      1 => "-- You glare at the sword, remembering your kindergarten sword class you last took. OBVIOUSLY you are SUPER SKILLED after that ONE CLASS all those YEARS AGO. 'LETS ROCK AND ROLL' you say to yourself. You grasp for the swords hilt, but SUDDENLY the SWORD opens its MOUTH and BITES your HAND off. It was an OBVIOUS mimic. You bleed out and DIE. THE END. YOU LOSE",
+      2 => "-- You decide this place needs a little TIDYING UP. You grab the broom handle and deftly sweep the floor of dirt. The handle breaks suddenly, because the WOOD is OLD. You suddenly impale yourself on the bottom half of the broom. THE END. YOU LOSE",
+      3 => "-- You are transfixed by the SOMETHING SHINY and approach it. You are determined to MAKE IT YOURS and reach out to grasp it. The SOMETHING SHINY is actually the sparkle of a LIT PIECE OF DYNAMITE that EXPLODES! You are now a million different pieces. THE END. YOU LOSE",
+    }
+    puts endings[answer]
+    puts "\n--YIKES, TRY AGAIN\n "
     get_story
     get_choices
   end
@@ -24,7 +30,7 @@ class Story
     puts [@choice1, @choice2, @choice3, @choice4]
     answer = gets.chomp.to_i
     if answer == 1 || answer == 2 || answer == 3
-      end_story
+      end_story(answer)
     elsif answer == 4
        puts story_branch2 = Story2.new("Throw the rock!", "Hold your breath until you pass out", "Throw the rock AT the minotaur", "Urinate thy loins")
        puts story_branch2.get_story
@@ -97,23 +103,23 @@ end
       # retry for loops to start game over again
     end
 
-      def get_choices
-        puts [@choice1, @choice2, @choice3, @choice4]
-        answer = gets.chomp.to_i
-        if answer == 1 || answer == 2 || answer == 4
-          puts story_branch3 = Story4.new("Created by Meo", "Created by Shaker", "Created by Andee", "Select any of these to PLAY AGAIN")
-          puts story_branch3.get_story
-          puts story_branch3.get_choices
-      elsif answer == 3
+  def get_choices
+    puts [@choice1, @choice2, @choice3, @choice4]
+    answer = gets.chomp.to_i
+    if answer == 1 || answer == 2 || answer == 4
+      puts story_branch3 = Story4.new("Created by Meo", "Created by Shaker", "Created by Andee", "Select any of these to PLAY AGAIN")
+      puts story_branch3.get_story
+      puts story_branch3.get_choices
+    elsif answer == 3
       end_story
-        elsif answer == 5
-          puts @choice5
-        else
-          puts "Pick a number between 1 - 4!"
-          puts get_choices
-        end
-      end
+    elsif answer == 5
+      puts @choice5
+    else
+      puts "Pick a number between 1 - 4!"
+      puts get_choices
     end
+  end
+end
 
 
 #Branch 4 - Win
@@ -126,21 +132,21 @@ class Story4 < Story
     @story = "-- DWAYNE THE ROCK JOHNSON appreciates you SMELLING what he is COOKING. He looks down at the incapacitated MINOTAUR and performs THE PEOPLES ELBOW with enough force to send that JABRONI back through TIME, completely ERASING that CANDYASS from OUR TIMELINE.\n THE ROCK, gathers you into his arms and RUNS for the exit, out into the open air and like a HUMAN UBER delivers you home SAFELY. YOU WIN!!!!!"
   end
 
-    def get_choices
-      puts [@choice1, @choice2, @choice3, @choice4]
-      answer = gets.chomp.to_i
-      if answer == 1 || answer == 2 || answer == 3 || answer == 4
-        begin_story = Story.new("Sword","Broom","Something shiny", "Smooth rock")
-        begin_story.get_story
-        begin_story.get_choices
-      elsif answer == 5
-        puts @choice5
-      else
-        puts "Pick a number between 1 - 4!"
-        puts get_choices
-      end
+  def get_choices
+    puts [@choice1, @choice2, @choice3, @choice4]
+    answer = gets.chomp.to_i
+    if answer == 1 || answer == 2 || answer == 3 || answer == 4
+      begin_story = Story.new("Sword","Broom","Something shiny", "Smooth rock")
+      begin_story.get_story
+      begin_story.get_choices
+    elsif answer == 5
+      puts @choice5
+    else
+      puts "Pick a number between 1 - 4!"
+      puts get_choices
     end
   end
+end
 
 
 
