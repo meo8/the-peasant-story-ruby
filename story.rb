@@ -46,50 +46,40 @@ class Story2 < Story
   def initialize (choice1, choice2, choice3, choice4)
     super(choice1, choice2, choice3, choice4)
   end
+
   def get_story
     @story = "-- You regard the rather smooth rock with wide eyes, the obviously wise choice for your newly thrust journey.\n You decide to proceed deeper into the cave with your newly acquired item and quickly enter into the next opening where in the middle of the room stands a dark figure. Behind the figure is the exit of the cave.\n SUDDENLY the room fills with the figures booming voice as it turns to face you revealing its true self: A HUGE MINOTAUR!!!\n WHAT DO YOU DO? (choose a number between 1 and 4)"
   end
 
-  def end_story_1
-    p @end_story = "-- You look down at your mighty weapon: The rock, and decide to throw it with all your strength. It flies through the air at surprising speed.. right over the head of the minotaur, who watches calmly as it hits the ground with a slight thud behind him. He then focuses his gaze on you and charges you with his axe in hand, instantly killing you upon impact. THE END. YOU LOSE."
-    get_story
-    get_choices
-    # retry for loops to start game over again
-  end
-
-  def end_story_2
-    p @end_story = "-- ... You hold your breath and pass out. You wake up dead. THE END. YOU LOSE"
-    get_story
-    get_choices
-  end
-
-  def end_story_4
-    p @end_story = "-- Like the big man you are, you urinate all over yourself. The minotaur laughs himself to death. You also die from embarassment. THE END. YOU LOSE"
+  def end_story(answer)
+    endings = {
+      1 => "-- You look down at your mighty weapon: The rock, and decide to throw it with all your strength. It flies through the air at surprising speed.. right over the head of the minotaur, who watches calmly as it hits the ground with a slight thud behind him. He then focuses his gaze on you and charges you with his axe in hand, instantly killing you upon impact. THE END. YOU LOSE.",
+      2 => "-- ... You hold your breath and pass out. You wake up dead. THE END. YOU LOSE",
+      4 => "-- Like the big man you are, you urinate all over yourself. The minotaur laughs himself to death. You also die from embarassment. THE END. YOU LOSE",
+    }
+    puts endings[answer]
+    puts "\n--YIKES, TRY AGAIN\n "
     get_story
     get_choices
   end
 
-    def get_choices
-      puts [@choice1, @choice2, @choice3, @choice4]
-      answer = gets.chomp.to_i
-      if answer == 1
-      end_story_1
-    elsif answer == 2
-     end_story_2
-   elsif answer == 4
-     end_story_4
+  def get_choices
+    puts [@choice1, @choice2, @choice3, @choice4]
+    answer = gets.chomp.to_i
+    if answer == 1 || answer == 2 || answer == 4
+      end_story(answer)
     elsif answer == 3
-         puts story_branch3 = Story3.new("GASP!", "SWOON!", "Hold up a sign that says 'STONE COLD STEVE AUSTIN IS WAY COOLER'", "Cheer THE ROCK on!")
-         puts story_branch3.get_story
-         puts story_branch3.get_choices
-      elsif answer == 5
-        puts @choice5
-      else
-        puts "Pick a number between 1 - 4!"
-        puts get_choices
-      end
+      puts story_branch3 = Story3.new("GASP!", "SWOON!", "Hold up a sign that says 'STONE COLD STEVE AUSTIN IS WAY COOLER'", "Cheer THE ROCK on!")
+      puts story_branch3.get_story
+      puts story_branch3.get_choices
+    elsif answer == 5
+      puts @choice5
+    else
+      puts "Pick a number between 1 - 4!"
+      puts get_choices
     end
   end
+end
 
 #Branch 3
   class Story3 < Story
