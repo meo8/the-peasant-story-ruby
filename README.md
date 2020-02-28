@@ -11,6 +11,8 @@ git clone <git url here>
 
 ## Usage
 
+CD into the destination directory where the clone was downloaded and run the following command.
+
 ```bash
 ruby story.rb
 
