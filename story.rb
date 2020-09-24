@@ -21,7 +21,7 @@ class Story
     endings = {
       1 => "-- You glare at the sword, remembering your kindergarten sword class you last took. OBVIOUSLY you are SUPER SKILLED after that ONE CLASS all those YEARS AGO.\n\n-- 'LETS ROCK AND ROLL!' you yell out. The sword yells out 'HELL YEAH BROTHER!'.\n\n-- This should have phased you. But, as mentioned. You're an idiot..\n\n-- SUDDENLY the MIMIC SWORD opens its MOUTH and BITES your HAND off. You bleed out and DIE. THE END. YOU LOSE",
       2 => "-- You decide this place needs a little TIDYING UP. You grab the broom handle and deftly sweep the floor of dirt. The handle breaks suddenly, because the WOOD is OLD. You suddenly impale yourself on the bottom half of the broom. THE END. YOU LOSE",
-      3 => "-- Your head falls back, your mouth opens wide, you tilt your entire body backwards and breath in sharply yet deeply..\n\n-- You QUICKLY exhale as you flex your body forwards in a massive scream 'COOOOOOL ITTTTT!' which echoes out through the cave.....\n\n --'no u' is replied back quietly.\n\n -- k, cool, now what do you wanna do?",
+      3 => "-- Your head falls back, your mouth opens wide, you tilt your entire body backwards and breath in sharply yet deeply..\n\n-- You QUICKLY exhale as you FLEX your body forwards in a massive scream 'COOOOOOL ITTTTT!' which echoes out through the cave.....\n\n --'no u' is replied back quietly.\n\n -- k, cool, now what do you wanna do?",
     }
     puts endings[answer]
     puts "\nTRY AGAIN\n--------------"
@@ -65,7 +65,7 @@ class Story2 < Story
     endings = {
       1 => "-- You look down at your mighty weapon: The rock. You decide to throw it with all your big stronk strenf.\n\n-- Right at the wall.\n\n-- The MINOTAUR kills you. THE END. YOU LOSE.",
       2 => "-- You make eye contact with the MINOTAUR to show DOMINANCE and inhale a shallow breath QUICKLY.\n\n-- You hold your BREATH. Your FACE gets RED, then PURPLE, then BLUE. You KEEP EYE CONTACT the ENTIRE time.\n\n-- You PASS OUT.\n\n-- The MINOTAUR is CONFUSED.\n\n-- You wake up DEAD. THE END. YOU LOSE",
-      4 => "-- You know JUST the thing to DO!\n\n -- Like the big brained smarty pants you are, you choose to URINATE all over yourself.\n\n-- The MINOTAUR bursts\n\n-- You LAUGH.\n\n-- The MINOTAUR laughs again.\n\n-- You LAUGH again. \n\n-- The MINOTAUR stabs you.\n\nTHE END. YOU LOSE",
+      4 => "-- You know JUST the thing to DO!\n\n -- Like the big brained smarty pants you are, you choose to URINATE all over yourself.\n\n-- The MINOTAUR bursts into LAUGHTER\n\n-- You LAUGH.\n\n-- The MINOTAUR laughs again.\n\n-- You LAUGH again. \n\n-- The MINOTAUR stabs you.\n\nTHE END. YOU LOSE",
     }
     puts endings[answer]
     puts "\nTRY AGAIN\n--------------\n"
